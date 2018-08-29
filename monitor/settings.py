@@ -22,8 +22,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'pz49b30db8hxx)6^suuzt28!of*ef-*e05ie)8^7*40$-e#(^a'
 
+
+# Celery settings
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost//'
+
+#: Only add pickle to this list if your broker is secured
+#: from unwanted access (see userguide/security.html)
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_TASK_SERIALIZER = 'json'
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
 
 ALLOWED_HOSTS = []
 
@@ -124,6 +137,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-# Celery
-CELERY_RESULT_BACKEND = 'django-db'
