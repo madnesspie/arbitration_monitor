@@ -138,9 +138,11 @@ LOGGING = {
         },
         'monitor': {
             'handlers': ['console'],
+            'level': 'DEBUG',
         },
         'picker': {
             'handlers': ['console'],
+            'level': 'DEBUG',
         }
     }
 }
