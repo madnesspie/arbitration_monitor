@@ -42,8 +42,8 @@ socket_manager = BinanceSocketManager(client)
 """
 
 def process_message(msg):
-    # print(datetime.datetime.now())
-    print(msg[0], sep='\n', end='\n\n\n')
+    print(datetime.datetime.now())
+    # print(msg, sep='\n', end='\n\n\n')
 
 
     # do something
@@ -51,6 +51,6 @@ def process_message(msg):
 logger.debug(f"Hello!!!!!!  ")
 # start any sockets here, i.e a trade socket
 conn_key = socket_manager.start_ticker_socket(process_message)
-print(conn_key)
+# print(conn_key)
 # then start the socket manager
 socket_manager.start()
